@@ -1,0 +1,50 @@
+<xml:View
+    controllerName="sap.ui.demo.misha.controller.Wizard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f = "sap.ui.layout.form"
+    xmlns:t ="sap.tnt"
+    xmlns:v = "sap.ui.comp.variants"
+    xmlns:u = "sap.ui.unified"
+    xmlns="sap.m">
+    <NavContainer id="wizContainer">
+        <pages>
+            <Page
+              title="Визард Пэйдж">
+              <content>
+                <Wizard id="createWiz"
+                    complete="wizardCompleteHandler">
+                    <WizardStep title="Выбор продукта">
+                        <MessageStrip text="Это полоска Мессадж Стрипа" showIcon="true" class="sapUiSmallMargin" />
+                        <Text text="Не следует, однако забывать, что реализация намеченных плановых заданий способствует подготовки и реализации дальнейших направлений развития. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности позволяет оценить значение новых предложений. С другой стороны постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Разнообразный и богатый опыт сложившаяся структура организации позволяет оценить значение существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании форм развития." />
+                        <HBox alignItems="center" justifycontent="center" class="sapUiSmallMargin">
+                            <SegmentedButton>
+                                <Button icon="sap-icon://iphone" text="Мобильный" />
+                                <Button icon="sap-icon://database" text="Мобильный" />
+                                <Button icon="sap-icon://sys-monitor" text="Мобильный" />
+                            </SegmentedButton>
+                        </HBox>
+                    </WizardStep>
+                    <WizardStep title="Заполнение формы">
+                        <f:SimpleForm editable="true">
+                            <Label text="Имя"/>
+                            <Input valueStateText="Введите как минимум 6 символов"/>
+                            <Label text="Фамилия"/>
+                            <Input placeholder="Введите как минимум 6 символов"/>
+                            <Label text="Фотография"/>
+                            <u:FileUploader placeholder="Выбирите файл" />
+                            <Label text="Выбирите дату" />
+                            <DatePicker displayFormat="short"/>
+                        </f:SimpleForm>
+                    </WizardStep>
+                </Wizard>
+              </content>
+              <footer>
+                  <Toolbar>
+                      <ToolbarSpacer />
+                      <Button text="Кнопка" />
+                  </Toolbar>
+            </footer>
+            </Page>
+        </pages>
+    </NavContainer>
+</xml:View>

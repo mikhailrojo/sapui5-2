@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="sap.ui.demo.misha.controller.Supplier"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic">
+
+    <semantic:DetailPage
+        id="supplierPage"
+        navButtonPress="onNavBack"
+        showNavButton="true">
+        <semantic:content>
+            <ObjectHeader
+              title="Это информация о поставщике: {CompanyName}">
+              <attributes>
+
+              </attributes>
+              <firstStatus>
+
+              </firstStatus>
+            </ObjectHeader>
+            <Table>
+                <columns>
+                    <Column>
+                        <Text text="Название компании"/>
+                    </Column>
+                    <Column>
+                        <Text text="Контактное лицо"/>
+                    </Column>
+                    <Column>
+                        <Text text="Должность"/>
+                    </Column>
+                    <Column>
+                        <Text text="Адрес"/>
+                    </Column>
+                    <Column>
+                        <Text text="Телефон"/>
+                    </Column>
+                    <Column>
+                        <Text text="Почтовый код"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier
+                              title="{CompanyName}"
+                              text="about it" />
+                            <ObjectIdentifier
+                                title="{ContactName}"
+                                 />
+                            <ObjectIdentifier
+                                  title="{ContactTitle}"
+                                 />
+                            <ObjectIdentifier
+                                   title="{Address}"
+                                    />
+                            <ObjectIdentifier
+                                  title="{Phone}"
+                                   />
+                            <ObjectIdentifier
+                                title="{PostalCode}"
+                                 />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </semantic:content>
+
+
+
+    </semantic:DetailPage>
+
+
+
+    <Text text="Это страница супплаера" />
+    <Text text="{CompanyName}" />
+</mvc:View>

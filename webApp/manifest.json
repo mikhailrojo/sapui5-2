@@ -1,0 +1,136 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+	"_version": "1.1.0",
+	"id": "sap.ui.demo.misha",
+	"type": "application",
+	"title": "{{appTitle}}",
+	"description": "{{appDescription}}",
+	"applicationVersion": {
+	  "version": "1.0.0"
+    },
+    "dataSources": {
+        "products": {
+            "uri": "http://services.odata.org/Northwind/Northwind.svc/",
+            "type": "oData",
+            "settings": {
+                "odataVersion": "2.0"
+            }
+        }
+    }
+
+  },
+  "sap.ui": {
+	"_version": "1.1.0",
+	"technology": "UI5",
+	"deviceTypes": {
+	  "desktop": true,
+	  "tablet": true,
+	  "phone": true
+	},
+	"supportedThemes": [
+	  "sap_bluecrystal"
+	]
+  },
+  "sap.ui5": {
+	"_version": "1.1.0",
+	"rootView": "sap.ui.demo.misha.view.App",
+	"dependencies": {
+	  "minUI5Version": "1.30",
+	  "libs": {
+		"sap.m": {}
+	  }
+  	},
+    "models": {
+        "i18n": {
+            "type": "sap.ui.model.resource.ResourceModel",
+            "settings": {
+                "bundleName": "sap.ui.demo.misha.i18n.i18n"
+            }
+        },
+        "": {
+            "type" : "sap.ui.model.odata.ODataModel",
+            "dataSource": "products"
+        }
+    },
+  	"routing":{
+		"config":{
+            "routerClass": "sap.m.routing.Router",
+            "viewPath": "sap.ui.demo.misha.view",
+            "viewType": "XML",
+            "controlId": "app",
+            "controlAggregation": "detailPages",
+            "bypassed": {
+                "target": ["master", "notFound"]
+            }
+		},
+		"routes":[
+			{
+				"pattern": "",
+				"name": "home",
+				"target": ["master", "allProducts"]
+			},
+            {
+                "pattern": "Object/{id}",
+                "name": "object",
+                "target": ["master", "object"]
+            },
+            {
+                "pattern": "Supplier/{SupplierID}",
+                "name": "supplier",
+                "target": ["master", "supplier"]
+            },
+            {
+                "pattern": "misha",
+                "name": "misha",
+                "target": ["master", "misha"]
+            },
+            {
+                "pattern": "misha2",
+                "name": "misha2",
+                "target": ["master", "misha2"]
+            },
+            {
+                "pattern": "misha3",
+                "name": "misha3",
+                "target": ["master", "misha3"]
+            },
+            {
+                "pattern": "wizard",
+                "name": "wizard",
+                "target": ["master", "wizard"]
+            }
+		],
+		"targets":{
+            "wizard": {
+                "viewName": "Wizard"
+            },
+            "misha3": {
+                "viewName": "Misha3"
+            },
+            "misha2": {
+                "viewName": "Misha2"
+            },
+            "misha": {
+                "viewName": "Misha"
+            },
+			"master": {
+				"viewName": "MasterView",
+                "controlAggregation": "masterPages"
+			},
+            "object": {
+                "viewName": "ObjectView"
+            },
+            "supplier": {
+                "viewName": "Supplier"
+            },
+            "notFound": {
+                "viewName": "NotFound"
+            },
+            "allProducts": {
+                "viewName": "allProducts"
+            }
+		}
+	}
+  }
+}

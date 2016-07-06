@@ -1,0 +1,87 @@
+<mvc:View
+    controllerName="sap.ui.demo.misha.controller.ObjectView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic"
+    xmlns:form="sap.ui.layout.form">
+
+    <semantic:DetailPage
+        id="page"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        title="Детальная страница">
+
+        <semantic:content>
+            <Table>
+                <columns>
+                    <Column>
+                        <Text id="mi" text="{i18n>productName}" />
+                    </Column>
+                    <Column>
+                        <Text id="mi2" text="Поставщик" />
+                    </Column>
+                    <Column>
+                        <Text id="mi3" text="Цена" />
+                    </Column>
+                    <Column>
+                        <Text id="mi4" text="Сток" />
+                    </Column>
+                    <Column>
+                        <Text  text="Ссылка" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        press="onSelectProduct">
+                        <cells>
+                            <ObjectIdentifier
+                              title="{ProductName}"
+                              text="{QuantityPerUnit}"/>
+                            <ObjectIdentifier
+                              title="{SupplierID/}"/>
+                            <ObjectIdentifier
+                              title="{UnitPrice}"/>
+                            <ObjectIdentifier
+                                title="{UnitsInStock}"/>
+                            <Link text="Узнать о поставщике"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <Panel headerText="Табличка о поставщике" id="supplierTable">
+                <content>
+                    <form:SimpleForm>
+                        <form:content>
+                            <Label text="Название поставщика" />
+                            <Text text="{CompanyName}" />
+                            <Label text="Из города" />
+                            <Text text="{City}" />
+                            <Label text="Имя поставщика" />
+                            <Text text="{ContactName}" />
+                            <Label text="Адрес поставщика" />
+                            <Text text="{Address}" />
+                        </form:content>
+                    </form:SimpleForm>
+                </content>
+            </Panel>
+
+
+
+            <Panel headerText="Комментарии о поставщике">
+                <content>
+                    <FeedInput />
+                </content>
+            </Panel>
+
+
+
+        </semantic:content>
+
+        <semantic:flagAction>
+            <semantic:FlagAction />
+        </semantic:flagAction>
+    </semantic:DetailPage>
+
+</mvc:View>

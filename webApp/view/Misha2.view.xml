@@ -1,0 +1,54 @@
+<xml:View
+    controllerName="sap.ui.demo.misha.controller.Misha2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f = "sap.ushell.ui.footerbar"
+    xmlns:l = "sap.ui.layout"
+    xmlns:t ="sap.tnt"
+    xmlns:v = "sap.ui.comp.variants"
+    xmlns="sap.m">
+    <Page title="Экспериментальная страница2">
+        <t:ToolHeader>
+            <Button icon="sap-icon://menu2" />
+            <ToolbarSpacer width="20px" />
+            <Button text="Файл" type="Transparent"/>
+            <Button text="Редактировать" type="Transparent" />
+            <Button text="Звонки" type="Transparent" />
+            <Button text="Вид" type="Transparent"  />
+            <Button text="Инструменты" type="Transparent" />
+            <Button text="Помощь" type="Transparent" />
+            <t:ToolHeaderUtilitySeparator />
+            <Button text="Михаил Степанов" type="Transparent" />
+        </t:ToolHeader>
+    <HBox width="100%">
+            <Tokenizer width="100%"
+                tokens="{path: '/to', sorter: {path: 'id', reverse: true}}">
+                <Token key="{/id}" text="{name}" />
+            </Tokenizer>
+    </HBox>
+    <HBox>
+        <TimePicker />
+        <Switch  />
+        <Slider value="50" width="10em"/>
+
+    </HBox>
+    <footer>
+        <Toolbar>
+            <ToolbarSpacer />
+            <Select type="IconOnly"
+                autoAdjustWidth="true"
+                items="{/to}"
+                icon="sap-icon://filter">
+                <core:Item text="{name}"/>
+            </Select>
+            <SegmentedButton selectedKey="small">
+					<items>
+						<SegmentedButtonItem text="Small" key="small" />
+						<SegmentedButtonItem text="Medium" />
+						<SegmentedButtonItem text="Large" />
+					</items>
+				</SegmentedButton>
+        </Toolbar>
+    </footer>
+    </Page>
+</xml:View>

@@ -1,0 +1,93 @@
+<mvc:View
+    controllerName="sap.ui.demo.misha.controller.allProducts"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.m.semantic"
+    xmlns:my = "sap.ui.demo.misha.control"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+    <semantic:DetailPage
+        navButtonPress="onNavBack"
+        showNavButton="true"
+        title="Главная страница"
+        >
+
+    <IconTabBar
+        select="onQuickFilter">
+      <items>
+        <IconTabFilter
+          key="all"
+          text="Общее количество"
+          iconColor="Negative"
+          count="{AllProducts>/totalCount}"
+          icon="sap-icon://ipad">
+          <content>
+
+          </content>
+        </IconTabFilter>
+        <IconTabSeparator />
+        <IconTabFilter
+          key="discontinued"
+          text="Нулевые остатки"
+          iconColor="Critical"
+          count="{AllProducts>/discontinued}"
+          icon="sap-icon://laptop">
+          <content>
+
+          </content>
+        </IconTabFilter>
+        <IconTabSeparator />
+            
+      </items>
+    </IconTabBar>
+
+    <Table
+        mode="MultiSelect"
+        id= "table"
+      updateFinished="onUpdateFinished"
+      headerText="Таблица всех продуктов как с правой стороны"
+      items="{/Products}">
+     <headerToolbar>
+         <Toolbar>
+             <Title text="Всякие продукты" />
+             <ToolbarSpacer />
+             <SearchField
+               search="onSearch"
+               width="auto" />
+         </Toolbar>
+     </headerToolbar>
+      <columns>
+        <Column>
+            <Text text="ProductID" />
+        </Column>
+        <Column>
+            <Text text="ProductName" />
+        </Column>
+        <Column>
+            <Text text="QuantityPerUnit" />
+        </Column>
+        <Column>
+            <Text text="UnitPrice" />
+        </Column>
+        <Column>
+            <Text text="UnitsInStock" />
+        </Column>
+        <Column>
+            <Text text="Discontinued?" />
+        </Column>
+          </columns>
+      <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{ProductID}" />
+                <Text text="{ProductName}" />
+                <Text text="{QuantityPerUnit}" />
+                <Text text="{UnitPrice}" />
+                <Text text="{UnitsInStock}" />
+                <Text text="{Discontinued}" />
+            </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+</semantic:DetailPage>
+</mvc:View>

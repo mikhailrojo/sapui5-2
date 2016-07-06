@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+    <title>Misha</title>
+    <meta http-equiv="X-UA-Compatible" content="edge">
+    <meta charset="utf-8">
+        <script
+        id="sap-ui-bootstrap"
+        src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m"
+        data-sap-ui-theme="sap_bluecrystal"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-preload="async"
+        data-sap-ui-resourceroots= '{
+            "sap.ui.demo.misha" : "./"
+        }'></script>
+    <script>
+        sap.ui.getCore().attachInit(function(){
+            sap.ui.require([
+                "sap/m/Shell",
+                "sap/ui/core/ComponentContainer"
+            ], function(Shell, ComponentContainer){
+                new Shell("Shell", {
+                    app: new ComponentContainer({
+                        height: "100%",
+                        name: "sap.ui.demo.misha"
+                    })
+                }).placeAt("content");
+            })
+        });
+    </script>
+</head>
+
+<body class="sapUiBody">
+    <div id="content"></div>
+</body>

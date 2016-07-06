@@ -1,0 +1,10 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified">
+    <u:Menu>
+        <u:MenuItem text="Это первая вещь" icon="sap-icon://save" />
+        <u:MenuItem text="Это вторая вещь" icon="sap-icon://delete" />
+        <u:MenuItem text="Это третья вещь" icon="sap-icon://sun" />
+    </u:Menu>
+</core:FragmentDefinition>

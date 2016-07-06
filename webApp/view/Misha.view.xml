@@ -1,0 +1,64 @@
+<xml:View
+    controllerName="sap.ui.demo.misha.controller.Misha"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f = "sap.ushell.ui.footerbar"
+    xmlns:l = "sap.ui.layout"
+    xmlns:t ="sap.tnt"
+    xmlns:v = "sap.ui.comp.variants"
+    xmlns="sap.m"
+    >
+    <Page title="Экспериментальная страница">
+            <Button text="Открыть Экшн"
+            press="handleOpen"
+            class="sapUiSmallMarginBottom" />
+
+            <f:AddBookmarkButton
+                text="Добавить закладку"
+                subtitle="Субитир"
+                info="Инфо"
+                numberUnit="RuB"
+                showGroupSelection="true" />
+    <l:VerticalLayout width="100%" class="sapUiContentPadding">
+        <l:content>
+            <Breadcrumbs currentLocationText="Мишина страница">
+                <Link text="1" />
+                <Link text="2" />
+                <Link text="3" />
+            </Breadcrumbs>
+        </l:content>
+    </l:VerticalLayout>
+        <ToggleButton text="Открыть Меню"
+            press="handleMenuOpen"
+            class="sapUiSmallMarginBottom" />
+        <t:SideNavigation class="side-navigation-demo">
+            <t:item>
+                <t:NavigationList>
+                    <t:NavigationListItem text="Первая навигация"/>
+                    <t:NavigationListItem text="Вторая навигация"/>
+                    <t:NavigationListItem text="Третья навигация"/>
+                    <t:NavigationListItem text="Четвертая навигация">
+                        <t:NavigationListItem text="Четыре один навигация"/>
+                        <t:NavigationListItem text="Четыре два навигация"/>
+                    </t:NavigationListItem>
+                </t:NavigationList>
+            </t:item>
+
+
+            <t:fixedItem>
+                <t:NavigationList>
+                    <t:NavigationListItem text="Первая навигация"/>
+                    <t:NavigationListItem text="Вторая навигация"/>
+                    <t:NavigationListItem text="Третья навигация"/>
+                </t:NavigationList>
+
+            </t:fixedItem>
+        </t:SideNavigation>
+        <v:VariantManagement>
+            <v:variantItems>
+                <v:VariantItem text="Миша"/>
+                <v:VariantItem text="Тима"/>
+                <v:VariantItem text="Максим"/>
+            </v:variantItems>
+        </v:VariantManagement>
+    </Page>
+</xml:View>

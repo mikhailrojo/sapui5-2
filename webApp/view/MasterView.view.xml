@@ -1,0 +1,57 @@
+<mvc:View
+    controllerName="sap.ui.demo.misha.controller.MasterView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic">
+
+    <semantic:MasterPage
+        id="page"
+        navButtonPress="onNavBack"
+        showNavButton="true"
+        title="{i18n>MasterTitle}"
+        >
+        <semantic:addAction>
+            <semantic:AddAction />
+        </semantic:addAction>
+        <semantic:positiveAction>
+            <semantic:PositiveAction text="Позитив"/>
+        </semantic:positiveAction>
+
+        <semantic:subHeader>
+            <Bar>
+                <contentLeft>
+                    <Button text="subHeader button" type="Accept" icon="sap-icon://call" />
+                </contentLeft>
+                <contentRight>
+
+                </contentRight>
+            </Bar>
+        </semantic:subHeader>
+
+        <semantic:content>
+            <List
+              id="idList"
+              mode="SingleSelectMaster"
+              select="onListSelect"
+              items="{/Products}"
+              selectionChange="onObjectListPress"
+              >
+              <items>
+                  <ObjectListItem
+                    title="{ProductName}"
+                    number="{numberProperty}"
+                    numberUnit="{numberUnitProperty}">
+                    <attributes>
+
+                    </attributes>
+                    <firstStatus>
+
+                    </firstStatus>
+                  </ObjectListItem>
+              </items>
+            </List>
+        </semantic:content>
+
+    </semantic:MasterPage>
+
+</mvc:View>

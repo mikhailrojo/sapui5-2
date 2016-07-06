@@ -1,0 +1,13 @@
+<mvc:View
+    controllerName="sap.ui.demo.misha.controller.BaseController"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <MessagePage
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        icon="{sap-icon://document}"
+        text="Заданная вами страница не найдена"
+        title="Страница не найдена" />
+
+</mvc:View>

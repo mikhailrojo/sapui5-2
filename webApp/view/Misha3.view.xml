@@ -1,0 +1,31 @@
+<xml:View
+    controllerName="sap.ui.demo.misha.controller.Misha3"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:f = "sap.ushell.ui.footerbar"
+    xmlns:l = "sap.ui.layout"
+    xmlns:t ="sap.tnt"
+    xmlns:v = "sap.ui.comp.variants"
+    xmlns="sap.m">
+    <Page title="Крутая черепица">
+        <TileContainer tiles="{/TileCollection}">
+            <StandardTile
+                icon="sap-icon://{icon}"
+                type="{type}"
+                number="{number}"
+                info="{info}"
+                title="{title}"
+                infoState="{infoState}"
+                unitNumber="{numberUnit}"/>
+        </TileContainer>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                    <Button text="Добавить" type="Accept"/>
+                    <Button text="Удалить" type="Reject"/>
+                <ToolbarSpacer />
+            </Toolbar>
+        </footer>
+
+    </Page>
+</xml:View>
