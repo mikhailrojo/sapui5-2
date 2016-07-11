@@ -7,7 +7,7 @@
     xmlns:t ="sap.tnt"
     xmlns:v = "sap.ui.comp.variants"
     xmlns="sap.m">
-    <Page title="Крутая черепица">
+    <Page title="Пример черепичного дизайна">
         <TileContainer tiles="{/TileCollection}">
             <StandardTile
                 icon="sap-icon://{icon}"

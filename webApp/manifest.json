@@ -14,7 +14,8 @@
             "uri": "http://services.odata.org/Northwind/Northwind.svc/",
             "type": "oData",
             "settings": {
-                "odataVersion": "2.0"
+                "odataVersion": "2.0",
+                "localUri": "localService/metadata.xml"
             }
         }
     }
@@ -68,7 +69,7 @@
 			{
 				"pattern": "",
 				"name": "home",
-				"target": ["master", "allProducts"]
+				"target":  ["master", "tiles"]
 			},
             {
                 "pattern": "Object/{id}",
@@ -91,9 +92,9 @@
                 "target": ["master", "misha2"]
             },
             {
-                "pattern": "misha3",
-                "name": "misha3",
-                "target": ["master", "misha3"]
+                "pattern": "tiles",
+                "name": "tiles",
+                "target": ["master", "tiles"]
             },
             {
                 "pattern": "wizard",
@@ -105,8 +106,9 @@
             "wizard": {
                 "viewName": "Wizard"
             },
-            "misha3": {
-                "viewName": "Misha3"
+            "tiles": {
+                "viewName": "Misha3",
+                "controlAggregation": "detailPages"
             },
             "misha2": {
                 "viewName": "Misha2"
@@ -129,6 +131,7 @@
             },
             "allProducts": {
                 "viewName": "allProducts"
+
             }
 		}
 	}

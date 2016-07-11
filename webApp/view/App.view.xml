@@ -1,5 +1,7 @@
 <xml:View
+    controllerName="sap.ui.demo.misha.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <SplitApp id="app" />
+
 </xml:View>
